@@ -1,0 +1,16 @@
+D:\Mine\Tools\MyProjects\B\伍皇御用抽奖器\伍皇御用抽奖器\bin\Debug\伍皇御用抽奖器.exe.config
+D:\Mine\Tools\MyProjects\B\伍皇御用抽奖器\伍皇御用抽奖器\bin\Debug\伍皇御用抽奖器.exe
+D:\Mine\Tools\MyProjects\B\伍皇御用抽奖器\伍皇御用抽奖器\bin\Debug\伍皇御用抽奖器.pdb
+D:\Mine\Tools\MyProjects\B\伍皇御用抽奖器\伍皇御用抽奖器\bin\Debug\伍皇御用抽奖器.xml
+D:\Mine\Tools\MyProjects\B\伍皇御用抽奖器\伍皇御用抽奖器\obj\Debug\伍皇御用抽奖器.Form1.resources
+D:\Mine\Tools\MyProjects\B\伍皇御用抽奖器\伍皇御用抽奖器\obj\Debug\伍皇御用抽奖器.Resources.resources
+D:\Mine\Tools\MyProjects\B\伍皇御用抽奖器\伍皇御用抽奖器\obj\Debug\伍皇御用抽奖器.vbproj.GenerateResource.Cache
+D:\Mine\Tools\MyProjects\B\伍皇御用抽奖器\伍皇御用抽奖器\obj\Debug\伍皇御用抽奖器.exe
+D:\Mine\Tools\MyProjects\B\伍皇御用抽奖器\伍皇御用抽奖器\obj\Debug\伍皇御用抽奖器.xml
+D:\Mine\Tools\MyProjects\B\伍皇御用抽奖器\伍皇御用抽奖器\obj\Debug\伍皇御用抽奖器.pdb
+D:\Mine\Tools\MyProjects\B\伍皇御用抽奖器\伍皇御用抽奖器\obj\Debug\Interop.MediaPlayer.dll
+D:\Mine\Tools\MyProjects\B\伍皇御用抽奖器\伍皇御用抽奖器\obj\Debug\伍皇御用抽奖器.vbproj.ResolveComReference.cache
+D:\Mine\Tools\MyProjects\B\伍皇御用抽奖器\伍皇御用抽奖器\obj\Debug\Interop.ADODB.dll
+D:\Mine\Tools\MyProjects\B\伍皇御用抽奖器\伍皇御用抽奖器\bin\Debug\Interop.ADODB.dll
+D:\Mine\Tools\MyProjects\B\伍皇御用抽奖器\伍皇御用抽奖器\bin\Debug\Interop.MediaPlayer.dll
+D:\Mine\Tools\MyProjects\B\伍皇御用抽奖器\伍皇御用抽奖器\obj\Debug\伍皇御用抽奖器.vbprojResolveAssemblyReference.cache

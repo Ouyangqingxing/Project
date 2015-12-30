@@ -1,0 +1,10 @@
+D:\Mine\Tools\MyProjects\B\同桌是你\同桌是你\bin\Debug\同桌是你.exe.config
+D:\Mine\Tools\MyProjects\B\同桌是你\同桌是你\bin\Debug\同桌是你.exe
+D:\Mine\Tools\MyProjects\B\同桌是你\同桌是你\bin\Debug\同桌是你.pdb
+D:\Mine\Tools\MyProjects\B\同桌是你\同桌是你\bin\Debug\同桌是你.xml
+D:\Mine\Tools\MyProjects\B\同桌是你\同桌是你\obj\Debug\同桌是你.Form1.resources
+D:\Mine\Tools\MyProjects\B\同桌是你\同桌是你\obj\Debug\同桌是你.Resources.resources
+D:\Mine\Tools\MyProjects\B\同桌是你\同桌是你\obj\Debug\同桌是你.vbproj.GenerateResource.Cache
+D:\Mine\Tools\MyProjects\B\同桌是你\同桌是你\obj\Debug\同桌是你.exe
+D:\Mine\Tools\MyProjects\B\同桌是你\同桌是你\obj\Debug\同桌是你.xml
+D:\Mine\Tools\MyProjects\B\同桌是你\同桌是你\obj\Debug\同桌是你.pdb
