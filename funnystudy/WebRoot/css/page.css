@@ -1,0 +1,299 @@
+/****************************************** 基础部分 ******************************************/
+a 
+{
+    color: #2464B2;
+    text-decoration: none;
+}
+body
+{
+	font: 12px Arial,"微软雅黑","hiragino sans gb",simsun;
+	background-color:#FAFAFA;
+}
+
+/***************************************** header部分 *****************************************/
+.header
+{
+	width: 100%;
+	height:60px;
+	border-bottom: 1px solid #e5e5e5;
+	background-color:#0da ; 
+}
+
+.header_context
+{
+	padding:15px;
+}
+ .header img 
+{
+	position: absolute;
+	top: 10px;
+	border-radius: 10px;
+}
+.loginRegister
+{
+	position: absolute;
+	left:900px;	
+	top:16px;
+	font: 20px Arial,"微软雅黑","hiragino sans gb",simsun;
+}
+
+.userName 
+{
+	position: absolute;
+	left:760px;
+	color: red;
+	top: 19px; 
+	
+}
+.userInfo 
+{
+	position: absolute;
+	left:820px;
+	top: 19px;
+	color: red; 
+}
+.userMessage 
+{
+	position: absolute;
+	left:900px;
+	color: #3C3C46;
+	top: 19px; 
+}
+
+/***************************************** footer部分 *****************************************/
+.footer
+{
+	bottom:50px;
+	width: 100%;
+	height: 50px; 
+}
+.footerP
+{
+	border-top: 1px solid #e5e5e5;
+	text-align: center;
+	padding-top: 6px;
+	color: #0066ff; 
+	position: relative;
+	bottom: 6px;	
+}
+
+/****************************************** main部分 ******************************************/
+/******************* main.jsp左侧部分 *******************/
+.mainContext
+{
+	position: absolute;
+	top: 30px;
+	left: 98px;
+	width: 420px; 
+	height: 502px;
+	background-color:white;
+	border-top: 1px solid #DCDCDC; 
+	border-left: 1px solid #DCDCDC; 
+	border-right: 1px solid #DCDCDC; 
+}
+.mainContext ul
+{
+	margin-top: 0px;
+	padding-left: 0px;
+	background-color: white;
+}
+
+.mainContext li
+{
+	list-style: none;
+	width:420px;
+	height:100; 
+	border-bottom:1px solid #DCDCDC; 
+} 
+.mainContext li:hover
+{
+	border: 1px solid #0F0;
+} 
+.mainContext .link
+{
+	position:relative;
+	top:5%;
+	float:right;
+	width:300px;
+	height:100px;
+	font-size:14px;
+	color:#666; 
+} 
+.mainContext .link :hover
+{
+ 	text-decoration:underline
+}
+.mainContext ul li a
+{
+ 	color:#666;
+}
+.blueText
+{
+	color:#009FCC;
+}
+.redText
+{
+	color:red;
+}
+.orangeText
+{
+	color:#F51;
+}
+/******************* main.jsp中间部分 *******************/
+.noticeDiv
+{
+	position: absolute;
+	top: 30px;
+	left: 538px;
+	border: 1px solid #DCDCDC;
+	width: 421px;
+	height: 90px;
+	background-color:white; 	
+}
+.noticeDiv:hover
+{
+	border: 1px solid #0F0;
+}
+.notice
+{
+	font-size:17px;
+	color:red; 
+	position:relative;
+	top:32%;
+	left: 8%;
+	width: 366px;
+	text-align: center;
+	overflow: hidden;
+}
+
+
+.sentenceDiv
+{
+	position: absolute;
+	top: 416px;
+	left: 538px;
+	border: 1px solid #DCDCDC;
+	width: 421px;
+	height: 119px;
+	background-color:white;
+	font-size
+}
+.sentenceDiv:hover
+{
+	border: 1px solid #0F0;
+}
+.sentence
+{
+	position: relative;
+	top: 30%;
+	left: 5%;
+	width: 366px;
+	text-align: center;
+	overflow: hidden;
+	text-shadow: 1px 1px 0px #F3F3F3, 1px 2px 0px #B2B2B2;
+	font-size: 16px;
+	height: 50px;
+}
+/******************* main.jsp右侧部分 *******************/
+.rightPage
+{
+	position: absolute;
+	top: 30px;
+	left: 980px;
+	width: 280px;
+	height: 505px;
+	border: 1px solid #DCDCDC;
+	background-color:white;
+}
+.rightPage:hover
+{
+	border: 1px solid #0F0;
+}
+.lucky
+{
+	position: absolute;
+    top: 101px;
+    color: red;
+    text-align: center;
+    left: 30px;
+}
+}
+/************** 元气值部分 **************/
+.power
+{
+	position: absolute;
+	top:25px;
+	left:50px;
+	width: 200px;
+	height:70px;  
+}
+.power p
+{
+	position: relative; 
+	left:30%;
+	top:-55%; 
+	font: 15px Arial,"微软雅黑","hiragino sans gb",simsun;
+	color:red;
+}
+/************** 排行榜部分 **************/
+.phb
+{
+position: relative;
+top: 6%;
+width: 280px;
+height: 400px;
+}
+.phb ul
+{
+	list-style: outside none none;
+	position: relative;
+	top:8%;	
+}
+.phb li
+{
+	padding: 8px 0px 9px;
+	position: relative;
+	height: 15px;
+	line-height: 14px;
+	overflow: hidden; 
+	border-bottom: 1px dotted #DBDBDB;
+	margin: 0px 14px;
+
+}
+.phbRed
+{
+	background: #ED4138 none repeat scroll 0% 0%; 
+	border: 1px solid #DB2B28;
+	width: 12px;
+	height: 11px;
+	text-align: center;
+	display: inline;
+	float: left;
+	font-size: 10px;
+	line-height: 10px;
+	color: white;
+	margin: 3px;
+	position: relative;
+	left: 8%;
+}
+.phbUsername
+{
+	float: left;
+	display: inline;
+	margin-left: 72px;
+	margin-top: 3px;
+	overflow:hidden; 
+	width: 88px;
+	height: 14px;
+}
+.phbUserinfo
+{
+	position: relative;
+	right: -3%;
+	float:right;
+	color: red;
+	margin-right: 35px;
+	margin-top: 3px;
+}
+
+ 

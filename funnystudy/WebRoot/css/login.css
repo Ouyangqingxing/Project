@@ -1,0 +1,88 @@
+body
+{  
+	background-repeat:no-repeat;
+	font: 12px Arial,"微软雅黑","hiragino sans gb",simsun;
+	background-color:#FAFAFA;
+}
+
+.Login
+{
+	position: absolute;
+	left:752px;
+	top:80px;
+	width: 218px;
+	height: 226px;
+	margin: 30px auto 170px;
+	display:block; 
+	border: 1px solid red;
+	border-radius: 3px; 
+	font-size:24px; 
+	background-color:white; 
+} 
+.legend
+{
+	font-size: 24px;
+	color:red;
+} 
+.Login h2
+{
+	text-align: center;
+	margin-top: 50px;
+}
+.Login div 
+{
+	text-align: right;
+	margin-right: 30%;
+	height: 35px;
+}
+.Login .first
+{
+	margin-top: 60px;
+}
+table
+{
+	margin: 0 auto;
+	margin-top: 50px;
+}
+table tr
+{
+	height: 30px;
+}
+td span
+{
+	font-size: 12px;
+	color: #515151;
+	margin-left: 5px;
+}
+.sure
+{
+	width: 80px;
+	height: 30px;
+	display: block;
+	background: #F60; 
+	margin:10px 20px 0 0;
+	text-align: center; 
+	text-decoration:none;
+	color: #FFF;
+	border-radius: 3px; 
+	border:none;
+	position: relative; 
+	left: 73%;
+	top: -90%;
+}
+.sure:hover
+{
+	background: #F00;
+}
+.register
+{
+    font-size: 15px;
+    position: relative; 
+   	left: -38%;
+	top: 10%;
+}
+.registerSure
+{
+	width:200px;
+	height:100px;
+}

@@ -1,0 +1,275 @@
+body
+{ 
+	background-color:#FAFAFA;
+}
+/****************************************** 新增动态部分 ******************************************/
+.addAction
+{
+	position: absolute;
+	top: 20px;
+	left: 188px;
+	width: 600px;
+	height: 200px;
+	border: 1px solid #DCDCDC;
+	background-color:white;  
+	border-radius: 3px;
+}
+
+.qq{border-radius: 3px;}
+.qq .qq_title{padding: 10px 0 10px 20px;font-size: 14px;color:#666;}
+.qq .qq_msg2
+{
+	position:relative;
+	left:22px;
+	width:540px; 
+	height: 70px;
+	border:1px solid #ccc;
+	padding:10px; 
+	margin:0 auto; 
+	outline: none; 
+	resize:none; 
+}
+.qq .qq_msg3
+{
+	position: relative;
+	left: 21px;
+	width: 337px;
+	height: 260px;
+	border: 1px solid #CCC;
+	padding: 10px;
+	margin: 0px auto;
+	outline: medium none;
+	resize: none;
+}
+.qq .qq_msg4
+{ 
+	position: relative;
+	left: 12px;
+	width: 240px;
+	height: 50px;
+	padding: 10px;
+	margin: 0px auto;
+	outline: medium none;
+	resize: none;
+	top: -10px;
+}
+.qq .qq_box .qq_btn
+{
+	width: 80px;
+	height: 30px;
+	display: block; 
+	background: #F60;
+	float:right;
+	margin:10px 20px 0 0;
+	text-align: center;
+	line-height: 30px; 
+	text-decoration:none;
+	color: #FFF;
+	font-size: 14px;
+	border-radius: 3px;
+	position: relative;
+	bottom: 8px;
+	border:none;
+}
+.qq .qq_box .qq_btn:hover{background: #F00;}
+
+/****************************************** 修改个人信息部分 ******************************************/
+.baseInfo
+{
+	position: absolute;
+	top:20px;
+	left: 808px; 
+	width:380px;
+	height: 200px;
+	border: 1px solid #DCDCDC;
+	background-color:white; 
+}
+.changeFace
+{
+	position: absolute;
+	top:20px;
+	left: 808px; 
+	width:380px;
+	height: 200px;
+	border: 1px solid #DCDCDC;
+	background-color:white; 
+	display:none;
+}
+.boyFace
+{
+	width: 180px;
+	height: 180px;
+	padding: 20px;
+}
+.girlFace
+{
+	width: 180px;
+	height: 180px;
+	position: absolute;
+	top: 20px;
+	left: 183px;
+}
+/****************************************** 动态部分 ******************************************/
+.actionTitle
+{
+	position: absolute;
+	width: 600px;
+	background-color: #DFFFD9;
+	color: #5D7895;	
+}
+.action
+{
+	position: absolute;
+	top: 240px;
+	left: 188px;
+	width: 600px;
+	height: 430px;
+	border: 1px solid #DCDCDC;
+	background-color:white; 
+}
+.oneAction
+{
+	position:relative;
+	top:4%;
+	left: 5%;
+	width: 540px;
+}
+ 
+.actionLv
+{
+	width: 100px;
+	position: relative;
+	float: left;
+	top: -16%;
+	left: 20%;
+}
+.actionTime
+{
+	color:#bbb;
+	font-size:12px;
+	width:120px;
+}
+
+.actionPage
+{
+	position: relative;
+	left: 22%;
+	bottom: -23px;
+}
+.actionNull
+{
+	text-align:center;line-height:430px;overflow:hidden;
+}
+
+/****************************************** 学习情况部分 ******************************************/
+.studyInfoTitle
+{
+	position: absolute;
+	width: 380px;
+	background-color: #DFFFD9;
+	color: #5D7895;	
+}
+.studyInfo
+{
+	position: absolute;
+	top:240px;
+	left: 808px;
+	width:380px;
+	height: 430px;
+	border: 1px solid #DCDCDC;
+	background-color:white;
+	overflow:hidden; 	
+}
+.studyInfoContent
+{
+	width: 250px;
+	padding: 50px;
+	height: 300px;
+	font-size: 25px;
+	font-family: "楷体","楷体_GB2312";
+}
+.studyInfoNull
+{
+	text-align:center;line-height:430px;overflow:hidden;
+}
+.arrow  
+{
+	position: absolute;
+	left: 20px;
+	width: 340px;
+	top: 388px;
+}  
+
+/****************************************** 留言板部分 ******************************************/
+.messageTitle
+{
+	position: absolute;
+	width: 1000px;
+	background-color: #DFFFD9;
+	color: #5D7895;		
+}
+.message
+{
+	position: absolute;
+	top: 690px; 
+	left: 188px; 
+	border: 1px solid #DCDCDC;
+	background-color:white; 
+	width: 1000px;
+}
+.oneMessage
+{
+	position:relative;
+	top:4%;
+	left:12%; 
+	width: 762px;
+	height:200px;
+} 
+.messageLv
+{
+	width: 100px;
+	position: relative;
+	float: left;
+	top: -16%;
+	left: 20%;
+}
+.messageTime
+{
+	color:#bbb;
+	font-size:12px;
+	width:120px;  
+}
+.namelvtime
+{
+	position: relative;
+	left: 13%;
+	top: -70px;
+	width: 200px;
+}
+.messageContent
+{
+	position: relative;
+	top: -50px;
+	width: 500px;
+	height: 100px;
+	overflow: hidden;
+}
+.messagePage
+{
+	position: relative;
+	left: 33%; 
+}
+.messageNull
+{
+	text-align:center;line-height:600px;overflow:hidden;
+}
+.addMessage
+{
+	left: 20%;
+	width: 582px;
+	position: relative;
+	height: 180px;
+	border: 1px solid #DCDCDC;
+	background-color: #FFF;
+	border-radius: 3px; 
+}

@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" 
+	xmlns="http://java.sun.com/xml/ns/j2ee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+  <display-name></display-name>	
+  
+  <!-- =====================================基础部分===================================== -->
+  
+  	<!-- 欢迎页面 -->
+ 	<welcome-file-list>
+   		<welcome-file>index.jsp</welcome-file>
+  	</welcome-file-list>
+  
+	<!-- 错误页面 -->    
+    <error-page>
+  		<exception-type>java.lang.ArithmeticException</exception-type>
+  		<location>/errors/error.jsp</location>
+  	</error-page>
+
+	<!-- 404页面 -->  
+  	<error-page>
+  		<error-code>404</error-code>
+  		<location>/errors/404.jsp</location>
+  	</error-page>
+
+	<!-- 500页面 -->  
+  	<error-page>
+  		<error-code>500</error-code>
+  		<location>/errors/500.jsp</location>
+  	</error-page>  
+  
+  	<!-- jsp过滤器，用来处理全局中文乱码-->
+  	<filter>
+  		<filter-name>encodingFilter</filter-name>	
+		<filter-class>fs.common.filter.EncodingFilter</filter-class>
+  	</filter>
+  	<filter-mapping>		
+		<filter-name>encodingFilter</filter-name>
+  		<url-pattern>/*</url-pattern>
+  	</filter-mapping>
+  
+    <session-config>
+  		<session-timeout>20</session-timeout>
+  	</session-config>
+  
+  <!-- =====================================处理玩家的部分===================================== -->	 	
+ 	<!-- ===================== 战斗页面部分 ===================== -->
+ 	<!-- 加载战斗页面的数据 -->
+ 	<servlet>    
+ 		<servlet-name>ShowBattle</servlet-name>
+    	<servlet-class>fs.battle.servlet.ShowBattleServlet</servlet-class>  	
+	</servlet>  	
+	<servlet-mapping>
+      	<servlet-name>ShowBattle</servlet-name>
+      	<url-pattern>/ShowBattle.action</url-pattern> 	
+	</servlet-mapping> 	
+
+	<!-- 选择战胜后杀或护 -->
+ 	<servlet>    
+ 		<servlet-name>UpdatePk</servlet-name>
+    	<servlet-class>fs.battle.servlet.UpdatePkServlet</servlet-class>  	
+	</servlet>  	
+	<servlet-mapping>
+      	<servlet-name>UpdatePk</servlet-name>
+      	<url-pattern>/UpdatePk.action</url-pattern> 	
+	</servlet-mapping>
+	
+	<!-- 战斗 -->
+ 	<servlet>    
+ 		<servlet-name>Battle</servlet-name>
+    	<servlet-class>fs.battle.servlet.BattleServlet</servlet-class>  	
+	</servlet>  	
+	<servlet-mapping>
+      	<servlet-name>Battle</servlet-name>
+      	<url-pattern>/Battle.action</url-pattern> 	
+	</servlet-mapping>
+	
+	<!-- 显示排行榜玩家  --> 	
+	<servlet>	  
+		<servlet-name>ShowMain</servlet-name>	 
+		<servlet-class>fs.common.servlet.ShowMainServlet</servlet-class>	
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ShowMain</servlet-name>	  
+		<url-pattern>/ShowMain.action</url-pattern>	
+	</servlet-mapping>
+	
+	<!-- 外出历练  --> 	
+	<servlet>	  
+		<servlet-name>GoOuT</servlet-name>	 
+		<servlet-class>fs.battle.servlet.GoOutServlet</servlet-class>	
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GoOuT</servlet-name>	  
+		<url-pattern>/GoOut.action</url-pattern>	
+	</servlet-mapping>	
+	
+	<!-- 属性交换  --> 	
+	<servlet>	  
+		<servlet-name>ChangeCheck</servlet-name>	 
+		<servlet-class>fs.battle.servlet.ChangeCheckServlet</servlet-class>	
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ChangeCheck</servlet-name>	  
+		<url-pattern>/ChangeCheck.action</url-pattern>	
+	</servlet-mapping>
+	
+	<!-- 后台展示玩家  --> 	
+	<servlet>	  
+		<servlet-name>ShowBackPlayer</servlet-name>	 
+		<servlet-class>fs.back.servlet.ShowBackPlayerServlet</servlet-class>	
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ShowBackPlayer</servlet-name>	  
+		<url-pattern>/ShowBackPlayer.action</url-pattern>	
+	</servlet-mapping>	
+	
+	<!-- 隐藏页面玩家获得武功  --> 	
+	<servlet>	  
+		<servlet-name>GetWuGong</servlet-name>	 
+		<servlet-class>fs.battle.servlet.GetWuGongServlet</servlet-class>	
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetWuGong</servlet-name>	  
+		<url-pattern>/GetWuGong.action</url-pattern>	
+	</servlet-mapping>	
+	
+	<!-- 后台封号玩家  --> 	
+	<servlet>	  
+		<servlet-name>SealPlayer</servlet-name>	 
+		<servlet-class>fs.back.servlet.SealPlayerServlet</servlet-class>	
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SealPlayer</servlet-name>	  
+		<url-pattern>/SealPlayer.action</url-pattern>	
+	</servlet-mapping>	
+	
+	<!-- =====================================处理用户的部分===================================== -->
+ 	<!-- ===================== 登陆登出部分 ===================== -->
+ 	<!-- 判断用户的 Servlet（登录） --> 
+	<servlet>
+		<servlet-name>Login</servlet-name>
+    	<servlet-class>fs.study.servlet.LoginServlet</servlet-class>
+ 	</servlet>
+	<servlet-mapping>
+  		<servlet-name>Login</servlet-name>
+    	<url-pattern>/Login.action</url-pattern> 	
+	</servlet-mapping>
+  
+ 	<!-- 判断管理员的 Servlet（登录） --> 
+	<servlet>
+		<servlet-name>LoginM</servlet-name>
+    	<servlet-class>fs.back.servlet.LoginMServlet</servlet-class>
+ 	</servlet>
+	<servlet-mapping>
+  		<servlet-name>LoginM</servlet-name>
+    	<url-pattern>/LoginM.action</url-pattern> 	
+	</servlet-mapping>  
+ 
+  	<!-- 登出Servlet --> 
+	<servlet>
+	    <servlet-name>Logout</servlet-name>
+		<servlet-class>fs.study.servlet.LogoutServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Logout</servlet-name>
+		<url-pattern>/Logout.action</url-pattern>
+	</servlet-mapping>  
+  
+ 	<!-- ===================== 注册部分 ===================== -->
+   	<!-- 生成验证码  -->
+	<servlet> 	
+		<servlet-name>Identify</servlet-name>   	
+		<servlet-class>fs.common.util.Identify</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Identify</servlet-name>   	
+		<url-pattern>/Identify.action</url-pattern>	
+	</servlet-mapping>
+	
+ 	<!-- 判断用户username是否已存在 --> 
+	<servlet>
+		<servlet-name>Ajax</servlet-name>
+  		<servlet-class>fs.study.servlet.CheakUsernameServlet</servlet-class> 
+	</servlet>	
+	<servlet-mapping>
+  		<servlet-name>Ajax</servlet-name>
+  		<url-pattern>/CheckName.action</url-pattern>
+  	</servlet-mapping>
+  
+	<!-- 新建用户的 Servlet（注册） -->	
+	<servlet>    
+ 		<servlet-name>Register</servlet-name>
+    	<servlet-class>fs.study.servlet.RegisterServlet</servlet-class>  	
+	</servlet>  	
+	<servlet-mapping>
+      	<servlet-name>Register</servlet-name>
+      	<url-pattern>/Register.action</url-pattern> 	
+	</servlet-mapping>
+ 	
+ 	<!-- ===================== 学习页面部分 ===================== -->
+ 	<!-- 拿到查看别人学习页面的数据 -->
+ 	<servlet>    
+ 		<servlet-name>ShowStudy</servlet-name>
+    	<servlet-class>fs.study.servlet.ShowStudyServlet</servlet-class>  	
+	</servlet>  	
+	<servlet-mapping>
+      	<servlet-name>ShowStudy</servlet-name>
+      	<url-pattern>/ShowStudy.action</url-pattern> 	
+	</servlet-mapping>
+	
+ 	<!-- 拿到查看自己学习页面的数据 -->
+ 	<servlet>    
+ 		<servlet-name>ShowSelfStudy</servlet-name>
+    	<servlet-class>fs.study.servlet.ShowSelfStudyServlet</servlet-class>  	
+	</servlet>  	
+	<servlet-mapping>
+      	<servlet-name>ShowSelfStudy</servlet-name>
+      	<url-pattern>/ShowSelfStudy.action</url-pattern> 	
+	</servlet-mapping>
+	<!-- ========== 动态处理部分 ========== -->
+ 	<!-- 新增一个动态 -->
+ 	<servlet>    
+ 		<servlet-name>AddAction</servlet-name>
+    	<servlet-class>fs.study.servlet.AddActionServlet</servlet-class>  	
+	</servlet>  	
+	<servlet-mapping>
+      	<servlet-name>AddAction</servlet-name>
+      	<url-pattern>/AddAction.action</url-pattern> 	
+	</servlet-mapping>
+	
+ 	<!-- 修改一个动态的点赞数 -->
+ 	<servlet>    
+ 		<servlet-name>UpdateActionNumber</servlet-name>
+    	<servlet-class>fs.study.servlet.UpdateActionNumberServlet</servlet-class>  	
+	</servlet>  	
+	<servlet-mapping>
+      	<servlet-name>UpdateActionNumber</servlet-name>
+      	<url-pattern>/UpdateActionNumber.action</url-pattern> 	
+	</servlet-mapping>	
+
+ 	<!-- 删除一个动态 -->
+ 	<servlet>    
+ 		<servlet-name>DeleteAction</servlet-name>
+    	<servlet-class>fs.study.servlet.DeleteActionServlet</servlet-class>  	
+	</servlet>  	
+	<servlet-mapping>
+      	<servlet-name>DeleteAction</servlet-name>
+      	<url-pattern>/DeleteAction.action</url-pattern> 	
+	</servlet-mapping>
+
+	<!-- ========== 留言处理部分 ========== -->
+ 	<!-- 新增一个留言 -->
+ 	<servlet>    
+ 		<servlet-name>AddMessage</servlet-name>
+    	<servlet-class>fs.study.servlet.AddMessageServlet</servlet-class>  	
+	</servlet>  	
+	<servlet-mapping>
+      	<servlet-name>AddMessage</servlet-name>
+      	<url-pattern>/AddMessage.action</url-pattern> 	
+	</servlet-mapping>
+
+ 	<!-- 删除一个留言 -->
+ 	<servlet>    
+ 		<servlet-name>DeleteMessage</servlet-name>
+    	<servlet-class>fs.study.servlet.DeleteMessageServlet</servlet-class>  	
+	</servlet>  	
+	<servlet-mapping>
+      	<servlet-name>DeleteMessage</servlet-name>
+      	<url-pattern>/DeleteMessage.action</url-pattern> 	
+	</servlet-mapping>
+	
+	<!-- ========== 学习情况处理部分 ========== -->	
+ 	<!-- 新增一个学习情况 -->
+ 	<servlet>    
+ 		<servlet-name>AddStudyInfo</servlet-name>
+    	<servlet-class>fs.study.servlet.AddStudyInfoServlet</servlet-class>  	
+	</servlet>  	
+	<servlet-mapping>
+      	<servlet-name>AddStudyInfo</servlet-name>
+      	<url-pattern>/AddStudyInfo.action</url-pattern> 	
+	</servlet-mapping>	
+	
+ 	<!-- 修改自己的学习基本资料 -->
+ 	<servlet>    
+ 		<servlet-name>UpdateStudyBaseInfo</servlet-name>
+    	<servlet-class>fs.study.servlet.UpdateStudyBaseInfoServlet</servlet-class>  	
+	</servlet>  	
+	<servlet-mapping>
+      	<servlet-name>UpdateStudyBaseInfo</servlet-name>
+      	<url-pattern>/UpdateStudyBaseInfo.action</url-pattern> 	
+	</servlet-mapping>	
+	
+ 	<!-- 修改自己的头像 -->
+ 	<servlet>    
+ 		<servlet-name>UpdateUserFace</servlet-name>
+    	<servlet-class>fs.study.servlet.UpdateUserFaceServlet</servlet-class>  	
+	</servlet>  	
+	<servlet-mapping>
+      	<servlet-name>UpdateUserFace</servlet-name>
+      	<url-pattern>/UpdateUserFace.action</url-pattern> 	
+	</servlet-mapping>
+</web-app>

@@ -1,0 +1,11 @@
+@CHARSET "UTF-8";
+.showPlayer
+{
+	position: absolute;
+	width: 1280px;
+	height: 800px;
+	top: 100px;
+	left: 50px;
+	background-color: white;
+	border: 1px solid #DCDCDC;
+}

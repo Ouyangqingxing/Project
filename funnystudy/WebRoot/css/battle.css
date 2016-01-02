@@ -1,0 +1,560 @@
+/****************************************** 基础部分 ******************************************/
+a 
+{
+    color: #2464B2;
+    text-decoration: none;
+}
+body
+{
+	font: 12px Arial,"微软雅黑","hiragino sans gb",simsun;
+	background-color:#FAFAFA;
+}
+
+/****************************************** 左侧个人信息部分 ******************************************/
+.baseInfo
+{
+	position: absolute;
+	top:50px;
+	left: 188px; 
+	width:420px;
+	height: 430px;
+	border: 1px solid #DCDCDC;
+	background-color:white; 
+}
+.baseInfoTitle
+{
+	position: absolute;
+	width: 420px;
+	background-color: #DFFFD9;
+	color: #5D7895;
+}
+.battleFace
+{
+	border-radius: 50px;
+	padding: 32px;
+	left: 40px;
+	position: relative;
+	top: 20px;
+}
+.baseBattleInfo
+{
+	position: relative;
+	left: 49%;
+	top: -132px;
+	height: 120px;
+	overflow: hidden;
+	width: 208px;
+	line-height: 23px;
+}
+.personalValue1
+{
+	position: relative;
+	left: 67px;
+	width: 267px;
+	font-family: "楷体","楷体_GB2312";
+	font-size: 26px;
+	top: -50px;
+}
+.personalValue2
+{
+	position: relative;
+	left: 252px;
+	width: 206px;
+	font-family: "楷体","楷体_GB2312";
+	font-size: 26px;
+	top: -206px;
+}
+.battleComplex
+{
+	position: relative;
+	left: 70px;
+	width: 328px;
+	top: -111%;
+	font-size: 22px;
+}
+/****************************************** 右侧排行榜部分 ******************************************/
+.rightPage
+{
+	position: absolute;
+	top: 50px;
+	left: 628px;
+	width: 540px;
+	height: 430px;
+	border: 1px solid #DCDCDC;
+	background-color: #FFF;
+}
+.rightPageTitle
+{
+	position: absolute;
+	width: 540px;
+	background-color: #DFFFD9;
+	color: #5D7895;	
+}
+.phbClass
+{
+position: relative;
+top: 25px;
+left: 60px;
+width: 420px;
+font-size: 20px;
+}
+.phb
+{	  
+	position: relative;
+	width: 450px;
+	height: 300px;
+	top: -3px;
+	left: 16px;
+}
+.phb ul
+{
+	list-style: outside none none;
+	position: relative;
+	top:8%;	
+}
+.phb li
+{
+	padding: 8px 0px 9px;
+	position: relative;
+	height: 15px;
+	line-height: 14px;
+	overflow: hidden; 
+	border-bottom: 1px dotted #DBDBDB;
+	margin: 0px 14px;
+
+}
+.phbRed
+{
+	background: #ED4138 none repeat scroll 0% 0%;
+	border: 1px solid #DB2B28;
+	width: 12px;
+	height: 11px;
+	text-align: center;
+	display: inline;
+	float: left;
+	font-size: 10px;
+	line-height: 10px;
+	color: #FFF;
+	margin: 3px;
+	position: relative;
+	left: 8%;
+}
+.phbUsername
+{
+	float: left;
+	display: inline;
+	margin-left: 96px;
+	overflow: hidden;
+	width: 100px;
+	height: 14px;
+	font-size: 15px;
+	margin-top: 3px;
+}
+.phbUserLv
+{
+	position: relative;
+	color: #F00;
+	top: -16px;
+	left: 224px;
+	width: 36px;
+}
+.phbUserPower
+{
+	position: relative;
+	color: #F00;
+	left: 276px;
+	top: -43px;
+	width: 68px;
+}
+.phbUserBattle
+{
+	position: relative;
+	color: #F00;
+	width: 20px;
+	height: 20px;
+	padding: 0px;
+	left: 318px;
+	top: -57px;
+}
+
+.phbPage
+{
+	position: absolute;
+	bottom: 0px;
+	height: 30px;
+	font-size: 16px;
+	left: 108px;
+}
+/****************************************** 战斗信息部分 ******************************************/
+.battleInfo
+{
+	position: absolute;
+	top:500px;
+	left: 188px; 
+	width:420px;
+	height: 430px;
+	border: 1px solid #DCDCDC;
+	background-color:white; 
+}
+.battleInfoTitle
+{
+	position: absolute;
+	width: 420px;
+	background-color: #DFFFD9;
+	color: #5D7895;
+}
+.battleInfoText
+{
+	position: relative;
+	left: 1px;
+	width: 360px;
+	height: 308px;
+	padding: 10px;
+	margin: 0px auto;
+	outline: medium none;
+	resize: none;
+	top: 43px;
+	overflow: scroll;
+}
+.battleInfoNull
+{
+	text-align:center;line-height:430px;overflow:hidden;
+	font-size:14px;
+}
+/****************************************** 随机玩家信息部分 ******************************************/
+.randomPlayer
+{
+	position: absolute;
+	top: 500px;
+	left: 628px;
+	width: 540px;
+	height: 430px;
+	border: 1px solid #DCDCDC;
+	background-color: #FFF;
+}
+.randomPlayerTitle
+{
+	position: absolute;
+	width: 540px;
+	background-color: #DFFFD9;
+	color: #5D7895;
+}
+.pkRemark
+{
+	position: relative;
+	top: 40px;
+	left: 30px;
+	font-size: 18px;
+	width: 320px;
+	color: rgb(102, 102, 102);
+}
+.randomPlayerFace
+{
+	border-radius: 20px;
+}
+.leftPlayer
+{
+position: relative;
+top: 80px;
+left: 30px;
+width: 230px;
+height: 250px;
+}
+.randomUserName
+{
+	font-family: "黑体";
+	font-size: 16px;
+	overflow: hidden;
+	display: inline;
+	width: 116px;
+	height: 17px;
+	float: left;
+	margin-top: -2px;
+}
+.playerBaseInfo
+{
+	position: relative;
+width: 150px;
+left: 80px;
+top: -62px;
+overflow: hidden;
+}
+.playerRemark
+{
+	position: relative;
+	top: -50px;
+	height: 45px;
+	overflow: hidden;
+	font-family: "楷体","楷体_GB2312";
+	font-size: 18px;
+}
+.rightPlayer
+{
+position: relative;
+top: -169px;
+left: 278px;
+width: 230px;
+height: 250px;
+}
+.pkInfo
+{
+	position:relative;
+	bottom:150px;
+}
+/****************************************** 相关信息部分 ******************************************/
+.closeRelativeInfo
+{
+	position: absolute;
+	left: 1120px;
+	top: 92px;
+	display: none;
+	z-index: 1;
+}
+.campInfo
+{
+	position: absolute;
+	border: 1px solid rgb(220, 220, 220);
+	width: 540px;
+	background-color: white;
+	left: 628px;
+	top: 50px;
+	height: 430px;
+	display: none;	
+}
+.campInfoTitle
+{
+	position: absolute;
+	width: 540px;
+	background-color: #DFFFD9;
+	color: #5D7895;
+}
+.campInfo span{font-family:'楷体','楷体_GB2312';font-size:20px;}
+.camp1
+{
+	position: relative;
+	width: 450px;
+	height: 120px;
+	left: 40px;
+	top: 46px;
+}
+.camp2
+{
+	position: relative;
+	width: 450px;
+	height: 120px;
+	top: 36px;
+	left: 40px;
+	
+}
+.camp3
+{
+position: relative;
+width: 450px;
+height: 120px;
+left: 40px;
+top: 42px;
+}
+
+
+
+.teamInfo
+{
+	position: absolute;
+	border: 1px solid rgb(220, 220, 220);
+	width: 540px;
+	background-color: white;
+	left: 628px;
+	top: 50px;
+	height: 430px;
+	display: none;	
+}
+.teamInfoTitle
+{
+		position: absolute;
+	width: 540px;
+	background-color: #DFFFD9;
+	color: #5D7895;
+}
+.teamInfo p
+{
+	text-align:center;line-height:430px;overflow:hidden;
+}
+.weaponInfo
+{
+	position: absolute;
+	border: 1px solid rgb(220, 220, 220);
+	width: 540px;
+	background-color: white;
+	left: 628px;
+	top: 50px;
+	height: 430px;
+	display: none;	
+}
+.weaponInfoTitle
+{
+		position: absolute;
+	width: 540px;
+	background-color: #DFFFD9;
+	color: #5D7895;
+}
+.wugongInfo
+{
+	position: absolute;
+	border: 1px solid rgb(220, 220, 220);
+	width: 540px;
+	background-color: white;
+	left: 628px;
+	top: 50px;
+	height: 430px;
+	display: none;	
+}
+.showAllWeapon
+{
+	position: absolute;
+	border: 1px solid rgb(220, 220, 220);
+	width: 540px;
+	background-color: white;
+	left: 628px;
+	top: 68px;
+	height: 412px;
+	display: none;
+}
+.showAllWeaponDetail
+{
+	position: relative;
+	margin: 36px;
+	left: -6px;
+	width: 526px;
+}
+.showAllWeapon p
+{
+	font-family: "楷体","楷体_GB2312";
+	font-size: 22px;
+	margin: 4px;
+	color: #F60;
+}
+.showAllWeapon a
+{
+	position: relative;
+	top: -27px;
+	left: 96px;
+}
+.showAllWeapon span
+{
+ 	font-size: 14px; 	
+ 	position: relative;
+	left: -30px;
+}
+
+.weaponInfo ul
+{
+	list-style: outside none none;position: relative;top: 110px;
+}
+.weaponInfo ul li
+{
+	font-size: 18px; 
+	margin: 7px;
+}
+.weaponInfo ul li p
+{
+	font-family: "楷体","楷体_GB2312";
+	font-size: 28px;
+	margin: 7px; 
+	color: #F60;
+}
+
+.wugongInfo ul
+{
+	list-style: outside none none;
+	position: relative;
+	top: 72px;
+	width: 482px;
+}
+.wugongInfo ul li
+{
+	font-size: 16px; 
+	margin: 7px; 
+}
+.wugongInfo ul li p
+{
+	font-family: "楷体","楷体_GB2312";
+	font-size: 26px;
+	margin: 7px;
+	color: #F60;
+}
+
+.wugongInfoTitle
+{
+	position: absolute;
+	width: 540px;
+	background-color: #DFFFD9;
+	color: #5D7895;
+}
+.goOutInfo
+{
+	position: absolute;
+	border: 1px solid rgb(220, 220, 220);
+	width: 540px;
+	background-color: white;
+	left: 628px;
+	top: 50px;
+	height: 430px;
+	display: none;	
+}
+.goOutInfoTitle
+{
+	position: absolute;
+	width: 540px;
+	background-color: #DFFFD9;
+	color: #5D7895;
+}
+.place1
+{
+	position: relative;
+	width: 450px;
+	height: 90px;
+	left: 40px;
+	top: 68px;
+}
+.place2
+{
+	position: relative;
+	width: 450px;
+	height: 90px;
+	left: 40px;
+	top: 68px;
+}
+.place3
+{
+	position: relative;
+	width: 450px;
+	height: 90px;
+	left: 40px;
+	top: 68px;
+}
+.place4
+{
+	position: relative;
+	width: 450px;
+	height: 90px;
+	left: 40px;
+	top: 68px;
+}
+.xiuLianDianInfo
+{
+	position: absolute;
+	border: 1px solid rgb(220, 220, 220);
+	width: 540px;
+	background-color: white;
+	left: 628px;
+	top: 50px;
+	height: 430px;
+	display: none;	
+}
+.xiuLianDianInfoTitle
+{
+	position: absolute;
+	width: 540px;
+	background-color: #DFFFD9;
+	color: #5D7895;
+}

@@ -1,0 +1,67 @@
+@CHARSET "UTF-8";
+
+#indexFont1
+{
+	position:absolute;
+	top:90px;
+	left:180px;
+}
+
+#indexFont2
+{
+	position:absolute;
+	top:125px;
+	left:220px;
+}
+
+#indexCentre
+{
+	position:absolute;
+	top:85px;
+	left:400px;
+	border-radius: 88px;
+}
+
+#indexGhost
+{
+	z-index:1;
+	position:absolute;
+	left:-50px;
+	top:206px;
+} 
+
+#indexUFO
+{
+	z-index:1;
+	position:absolute;
+	left:-50px;
+	top:156px;
+}
+
+#indexStar1
+{ 
+	position:absolute;
+	left:-50px;
+}
+
+#indexStar2
+{ 
+	position:absolute;
+	left:-50px;
+}
+#indexStar3
+{ 
+	position:absolute;
+	left:-50px;
+}
+#indexStar4
+{ 
+	position:absolute;
+	left:-50px;
+}
+
+#indexBottom
+{
+	position:absolute;
+	bottom:0px; 
+}

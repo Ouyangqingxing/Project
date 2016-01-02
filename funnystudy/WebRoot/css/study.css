@@ -1,0 +1,234 @@
+body
+{ 
+	background-color:#FAFAFA;
+}
+
+
+/****************************************** 动态部分 ******************************************/
+.actionTitle
+{
+	position: absolute;
+	width: 540px;
+	background-color: #DFFFD9;
+	color: #5D7895;
+}
+.action
+{
+	position: absolute;
+	top: 50px;
+	left: 628px;
+	width: 540px;
+	height: 430px;
+	border: 1px solid #DCDCDC;
+	background-color: #FFF;
+}
+.oneAction
+{
+	position:relative;
+	top:4%;
+	left:2%;
+	width:590px;
+}
+
+.actionUserName
+{
+	color:red;
+	width:100px;
+}
+.actionLv
+{
+	width: 100px;
+	position: relative;
+	float: left;
+	top: -16%;
+	left: 20%;
+}
+.actionTime
+{
+	color:#bbb;
+	font-size:12px;
+	width:120px;
+}
+
+.actionPage
+{
+	position: relative;
+	left: 19%;
+	bottom: -43px;
+}
+.actionNull
+{
+	text-align:center;line-height:430px;overflow:hidden;
+}
+
+/****************************************** 个人战斗属性部分 ******************************************/
+.battleTitle
+{
+	position: absolute;
+	width: 420px;
+	background-color: #DFFFD9;
+	color: #5D7895;
+}
+.battleInfo
+{
+	position: absolute;
+	top:50px;
+	left: 188px; 
+	width:420px;
+	height: 430px;
+	border: 1px solid #DCDCDC;
+	background-color:white; 	
+}
+.battleFace
+{
+	border-radius: 50px;
+	padding: 32px;
+	left: 40px;
+	position: relative;
+	top: 20px;
+}
+.baseBattleInfo
+{
+	position: relative;
+	left: 49%;
+	top: -132px;
+	height: 110px;
+	overflow: hidden;
+	width: 195px;
+	line-height: 40px;
+}
+.personalValue1
+{
+	position: relative;
+	left: 70px;
+	width: 248px;
+	font-family: "楷体","楷体_GB2312";
+	font-size: 26px;
+	top: -25%;
+}
+.personalValue2
+{
+	position: relative;
+	left: 256px;
+	width: 202px;
+	font-family: "楷体","楷体_GB2312";
+	font-size: 26px;
+	top: -232px;
+}
+.remarkInfo
+{
+	position: relative;
+	top: -110px;
+	left: 72px;
+	width: 320px;
+	height: 80px;
+	overflow: hidden;
+	font-size: 22px;
+	font-family: "楷体","楷体_GB2312";
+} 
+/****************************************** 留言板部分 ******************************************/
+.messageTitle
+{
+	position: absolute;
+	width: 980px;
+	background-color: #DFFFD9;
+	color: #5D7895;	
+}
+.message
+{
+	position: absolute;
+	top: 500px; 
+	left: 188px; 
+	border: 1px solid #DCDCDC;
+	background-color:white; 
+	width: 980px;
+}
+.oneMessage
+{
+	position:relative;
+	top:40px;
+	left:24%; 
+	width: 762px;
+	height:200px;
+} 
+.messageLv
+{
+	width: 100px;
+	position: relative;
+	float: left;
+	top: -16%;
+	left: 20%;
+}
+.messageTime
+{
+	color:#bbb;
+	font-size:12px;
+	width:120px;  
+}
+.namelvtime
+{
+	position: relative;
+	left: 13%;
+	top: -70px;
+	width: 200px;
+}
+.messageContent
+{
+	position: relative;
+	top: -50px;
+	width: 566px;
+	height: 80px;
+}
+.messagePage
+{
+	position: relative;
+	left: 33%; 
+}
+.messageNull
+{
+	text-align:center;line-height:600px;overflow:hidden;
+}
+
+.addMessage
+{
+	left: 20%;
+	width: 582px;
+	position: relative;
+	height: 180px;
+	border: 1px solid #DCDCDC;
+	background-color: #FFF;
+	border-radius: 3px; 
+}
+.qq{border-radius: 3px;}
+.qq .qq_title{padding: 10px 0 10px 20px;font-size: 14px;color:#666;}
+.qq .qq_msg2
+{
+	position:relative;
+	left:22px;
+	width:540px; 
+	height: 70px;
+	border:1px solid #ccc;
+	padding:10px; 
+	margin:0 auto; 
+	outline: none; 
+	resize:none; 
+}
+.qq .qq_box .qq_btn
+{
+	width: 80px;
+	height: 30px;
+	display: block; 
+	background: #F60;
+	float:right;
+	margin:10px 20px 0 0;
+	text-align: center;
+	line-height: 30px; 
+	text-decoration:none;
+	color: #FFF;
+	font-size: 14px;
+	border-radius: 3px;
+	position: relative;
+	bottom: 8px;
+	border:none;
+}
+.qq .qq_box .qq_btn:hover{background: #F00;}

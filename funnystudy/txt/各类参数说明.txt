@@ -1,0 +1,52 @@
+
+check 9有 5无
+一般情况下函数返回 0 或者 null 为错误结果。
+
+
+
+类/表名	   	属性	   			0	 1	  2	   3	   4	    5		6	7	8	9	10	11	      	 -1	 -10     		 
+
+
+Player:  	
+		state				封号	 正常				   修炼										绝情谷
+		
+		buff	（治疗15残杀14）	无buff   hp	atk	  def	  spd	   rp	 critical	dodge	攻速	速闪	体防	攻速闪体防	
+		
+		sex				女	 男
+
+Weapon:	
+		type				 	剑	  刀	  匕首	   暗器	    棍		枪
+		 
+		buffName		 		atk	  def	   spd	    rp	  critical	dodge   攻速	运速	攻防	攻暴
+
+
+WuGong：
+		type			 		反击	  主无武  主武	  临时buff 永久buff	
+		buffName			 	atk	   def	  spd	   rp	   critical	dodge
+		specialNumber -1必中 -2吸血	无(常态) type为3时此属性代表对应武器类型		
+
+BackPack:
+		goodsType			 	装备	  药品
+		goodsState			无(常态) 已使用(装备)
+
+Goods:
+		type				 	装备	  药品
+		buffName			 对应玩家表的Buff
+
+PlayerRelationship:
+		relationship			无关系	 好友 														仇人
+
+TeamPlayer:
+		job(可为自定义):			帮众	精英	长老	副帮主	帮主
+
+		
+
+
+
+		TeamLv		无	无	    1.2倍体       1.5倍体  1.5体1.2攻	1.5攻体	  1.5攻体1.2防 	 1.5攻体防  1.5攻体防1.2速  1.5攻体防速		1.8攻体防速	1.8+ 0.4*（N-10）攻速体防
+
+
+		luckNumber      无	双倍修为    双倍经验	1盟1.5倍攻  2盟1.5倍攻	3盟1.5倍攻  1萌2倍体	 2萌2倍体     3萌2倍体	 恶人1.2倍攻速体防	仙侠1.2倍攻速体防								
+
+
+类/表名	   	属性		0	 1	  	2	   3	      4	              5		6	     7	         8	    9	  		10

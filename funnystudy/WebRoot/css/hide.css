@@ -1,0 +1,40 @@
+@CHARSET "UTF-8";
+
+.hideHero 
+{
+	position: absolute;
+	top: 500;
+	left:600;
+}
+
+#jbox
+{
+	position:absolute;
+	top:20px;
+	left:320px;
+}
+ 
+.text
+{
+	background-color:white;
+	position: absolute;
+	width: 500px;
+	height: 120px;
+	top: 488px;
+	left: 438px;
+	border-radius: 10px;
+}
+.text img
+{
+	margin: 10px;
+	border-radius: 50px;
+	left: 20px;
+	position: relative;
+}
+.text p
+{
+	position: absolute;
+	left: 145px;
+	top: -2px;
+	width: 332px;
+}
