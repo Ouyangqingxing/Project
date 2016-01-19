@@ -1,14 +1,18 @@
-﻿ CREATE DATABASE `funnystudy`
- CHARACTER SET 'utf8'
- COLLATE 'utf8_general_ci';
+﻿-- 建立数据库并且设置编码为utf-8 
+CREATE DATABASE `funnystudy`
+CHARACTER SET 'utf8'
+COLLATE 'utf8_general_ci';
  
+-- 开启数据库的事件
 use funnystudy;
 set global event_scheduler =1; 
--- 每日更新挑战次数事件
+
+-- 新增每日更新挑战次数事件（注意开始时间 循环周期 和具体操作，如有需求可以更改）
 create event updateFightChance
 on schedule every 1 day starts timestamp '2015-12-22 22:00:00'
 do update Player set player_lastFightChance=20;
 
+-- 玩家表
 create table Player
 (
 		  player_id int auto_increment not null PRIMARY key,
@@ -45,6 +49,7 @@ create table Player
 
 )ENGINE=InnoDB DEFAULT CHARSET=UTF8;
 
+-- 玩家表新增数据
 insert Player (player_name,player_sex,player_remark,player_hp,player_atk,player_def,player_spd,player_rp,player_critical,player_dodge,player_lv,player_exp,player_wugong,player_equipment,player_backpack,player_campId,player_teamId,player_coreCheck,player_state,player_buff,player_lastFightChance,player_xiuwei,player_points,player_ranking,player_power,player_pk) 
 values ("★阿青★","0","",1500000000,5000000,3000000,400000,10,10,10,10,1,"0,","0,","3,",0,0,1,1,0,1,1,1,1,1,1);
 insert Player (player_name,player_sex,player_remark,player_hp,player_atk,player_def,player_spd,player_rp,player_critical,player_dodge,player_lv,player_exp,player_wugong,player_equipment,player_backpack,player_campId,player_teamId,player_coreCheck,player_state,player_buff,player_lastFightChance,player_xiuwei,player_points,player_ranking,player_power,player_pk) 
@@ -104,7 +109,7 @@ values ("★小巷里的流浪汉★","0","",10000,200,100,200,3,3,3,1,1,"0,","0
 insert Player (player_name,player_sex,player_remark,player_hp,player_atk,player_def,player_spd,player_rp,player_critical,player_dodge,player_lv,player_exp,player_wugong,player_equipment,player_backpack,player_campId,player_teamId,player_coreCheck,player_state,player_buff,player_lastFightChance,player_xiuwei,player_points,player_ranking,player_power,player_pk) 
 values ("★练习用的木头人★","0","",1000,50,50,50,3,3,3,1,1,"0,","0,","2,",0,0,21,1,0,1,1,1,28,1,1);
 
-
+-- 阵营表
 create table Camp
 (
 		  camp_id int auto_increment not null PRIMARY key,
@@ -115,10 +120,12 @@ create table Camp
 
 )ENGINE=InnoDB DEFAULT CHARSET=UTF8;
 
+-- 阵营表新增数据
 insert Camp (camp_name,camp_population,camp_remark,camp_teamNumber) values ("正义萌",2,"为了心中不会熄灭的正义之火！",0);
 insert Camp (camp_name,camp_population,camp_remark,camp_teamNumber) values ("魅邪教",2,"世间繁华，无所不同",0);
 insert Camp (camp_name,camp_population,camp_remark,camp_teamNumber) values ("浣月宫",2,"浣花洗剑",0);
 
+-- 帮会表
 create table Team
 (
 		  team_id int auto_increment not null PRIMARY key,
@@ -135,6 +142,7 @@ create table Team
  
 )ENGINE=InnoDB DEFAULT CHARSET=UTF8;
 
+-- 武器表
 create table Weapon 
 (
 			weapon_id int auto_increment not null PRIMARY key,
@@ -148,6 +156,7 @@ create table Weapon
 
 )ENGINE=InnoDB DEFAULT CHARSET=UTF8;
  
+-- 武器表新增数据
 insert Weapon (weapon_type, weapon_holderId, weapon_name, weapon_remark, weapon_buffName ,weapon_buffPower,weapon_specialNumber) values 
 							(1,5,"倚天剑","此剑出匣后不饮人血，不便还鞘。（攻击增加至300%）",1,300,0);
 insert Weapon (weapon_type, weapon_holderId, weapon_name, weapon_remark, weapon_buffName ,weapon_buffPower,weapon_specialNumber) values 
@@ -159,7 +168,7 @@ insert Weapon (weapon_type, weapon_holderId, weapon_name, weapon_remark, weapon_
 insert Weapon (weapon_type, weapon_holderId, weapon_name, weapon_remark, weapon_buffName ,weapon_buffPower,weapon_specialNumber) values 
 							(4,9,"天蛇杖","女娲族历代相传，拥有世间罕见的灵力。（攻击增加至200%，暴击提高20%）",10,200,0);
 
-
+-- 武功表
 create table WuGong
 (
 			wugong_id int auto_increment not null PRIMARY key, 
@@ -174,6 +183,7 @@ create table WuGong
 
 )ENGINE=InnoDB DEFAULT CHARSET=UTF8;
 
+-- 武功表新增数据
 insert WuGong (WuGong_type,WuGong_name,WuGong_remark,WuGong_buffName,WuGong_buffPower,WuGong_buffRound,WuGong_hits,wugong_specialNumber) 
 values (1,"乾坤大挪移","功法源自波斯明教，乃镇教之宝。（将受到的伤害3倍返还给对手）",0,300,0,0,0);
 
@@ -201,6 +211,7 @@ values (5,"九阴真经","所有上乘武学的原理几乎都不脱离九阴真
 insert WuGong (WuGong_type,WuGong_name,WuGong_remark,WuGong_buffName,WuGong_buffPower,WuGong_buffRound,WuGong_hits,wugong_specialNumber) 
 values (5,"易筋经","天竺和尚达摩留下的两卷秘经之一。（你的防御永久提高1.5倍）",2,150,0,0,0); 
 
+-- 物品表
 --  create table Goods
 -- (
 -- 			goods_id int auto_increment not null PRIMARY key,   
@@ -212,9 +223,11 @@ values (5,"易筋经","天竺和尚达摩留下的两卷秘经之一。（你的
 
 -- )engine=innodb default charset=UTF8;
 
+-- 物品表新增数据
 -- insert Goods (goods_name,goods_remark,goods_type,goods_buffName,goods_buffPower) values ("大力丸","接受你无法理解的力量！",2 , 1 ,120 ) ;
 -- insert Goods (goods_name,goods_remark,goods_type,goods_buffName,goods_buffPower) values ("敏捷丹","面对疾风吧！",2 ,3 ,120 ) ;
 
+-- 背包表
 -- create table BackPack
 -- (
 -- 		backpack_id int auto_increment not null PRIMARY key,  
@@ -229,6 +242,7 @@ values (5,"易筋经","天竺和尚达摩留下的两卷秘经之一。（你的
 
 --  )ENGINE=InnoDB DEFAULT CHARSET=UTF8;
 
+-- 帮会玩家表
 -- create table TeamPlayer
 -- (
 -- 			teamplayer_id int auto_increment not null PRIMARY key,  
@@ -241,6 +255,7 @@ values (5,"易筋经","天竺和尚达摩留下的两卷秘经之一。（你的
 -- 
 -- )ENGINE=InnoDB DEFAULT CHARSET=UTF8;
 
+-- 玩家关系表
 -- create table PlayerRelationship
 -- (
 -- 			playerrelationship_id int auto_increment not null PRIMARY key,
@@ -251,6 +266,7 @@ values (5,"易筋经","天竺和尚达摩留下的两卷秘经之一。（你的
 
 -- )ENGINE=InnoDB DEFAULT CHARSET=UTF8;
 
+-- 帮会职务表
 -- create table TeamJob
 -- (
 -- 			teamjob_id int auto_increment not null PRIMARY key,
@@ -264,7 +280,7 @@ values (5,"易筋经","天竺和尚达摩留下的两卷秘经之一。（你的
 -- 
 -- )ENGINE=InnoDB DEFAULT CHARSET=UTF8;
  
-
+-- 用户表
 create table user 
 (
 			user_id int auto_increment not null PRIMARY key, 
@@ -278,6 +294,7 @@ create table user
 
 )ENGINE=InnoDB DEFAULT CHARSET=UTF8;
 
+-- 用户表新增数据
 insert user(user_name,user_password,player_id,user_remark,user_state,user_face) values("★阿青★",52052052020,1,"天……天下竟有着……这样的美女！",1,10);
 insert user(user_name,user_password,player_id,user_remark,user_state,user_face) values("★飞蓬★",52052052020,2,"夕瑶……",1,8);
 insert user(user_name,user_password,player_id,user_remark,user_state,user_face) values("★重楼★",52052052020,3,"相见不如不见，有情还似无情，我知道她平安就够了…",1,9);
@@ -307,6 +324,7 @@ insert user(user_name,user_password,player_id,user_remark,user_state,user_face) 
 insert user(user_name,user_password,player_id,user_remark,user_state,user_face) values("★小巷里的流浪者★",52052052020,27,"。。。",1,15);
 insert user(user_name,user_password,player_id,user_remark,user_state,user_face) values("★练习用的木头人★",52052052020,28,"。。。",1,5);
 
+-- 留言版表
 create table Message
 (
 			message_id int auto_increment not null PRIMARY key,  
@@ -317,6 +335,7 @@ create table Message
 
 )ENGINE=InnoDB DEFAULT CHARSET=UTF8;
 
+-- 动态表
 create table Action
 (
 			action_id int auto_increment not null PRIMARY key,  
@@ -328,6 +347,7 @@ create table Action
 
 )ENGINE=InnoDB DEFAULT CHARSET=UTF8;
 
+-- 学习情况表
 create table studyInfo
 (
 			studyInfo_id int auto_increment not null PRIMARY key, 
@@ -338,6 +358,7 @@ create table studyInfo
 
 )ENGINE=InnoDB DEFAULT CHARSET=UTF8;
 
+-- 日常表
 create table daily
 (
 			daily_id int auto_increment not null PRIMARY key, 
@@ -351,12 +372,14 @@ create table daily
 insert daily(daily_date,daily_power,daily_camp1,daily_camp2,daily_camp3)
 values ("123",0,0,0,0);
 
+-- 名句表
 create table sentence
 (
 	sentence_id int auto_increment not null PRIMARY key,
 	sentence_content varchar(50)
 )ENGINE=InnoDB DEFAULT CHARSET=UTF8;
 
+-- 新增名句
 insert sentence (sentence_content) values ("每一个成功者都有一个开始。勇于开始，才能找到成功的路。");
 insert sentence (sentence_content) values ("任何的限制，都是从自己的内心开始的。");
 insert sentence (sentence_content) values ("古之成大事者，不唯有超世之才，亦必有坚韧不拔之志也。");
@@ -424,12 +447,14 @@ insert sentence (sentence_content) values ("Birth is much, but breeding is more.
 insert sentence (sentence_content) values ("Misfortunes tell us what fortune is.");
 insert sentence (sentence_content) values ("Constant dropping wears the stone. ");
 
+-- 公告表
 create table notice
 (
 	notice_id int auto_increment not null PRIMARY key,
 	notice_content varchar(50)
 )ENGINE=InnoDB DEFAULT CHARSET=UTF8;
 
+-- 公告表新增
 insert notice (notice_content) values ("公告:趣学习，去超越~ o(*≧▽≦)ツ ");
 insert notice (notice_content) values ("公告:趣学习，去超越~ o(*≧▽≦)ツ "); 
 insert notice (notice_content) values ("Tips:据说，欢迎界面有另一个世界的入口。 ");
@@ -450,10 +475,12 @@ insert notice (notice_content) values ("Tips:战斗力并不能说明一切。")
 insert notice (notice_content) values ("公告:趣学习，去超越~ o(*≧▽≦)ツ ");
 insert notice (notice_content) values ("公告:趣学习，去超越~ o(*≧▽≦)ツ "); 
 
+-- 管理员表
 create table manager
 (
 	manager_id int auto_increment not null PRIMARY key,
 	manager_name varchar(10) not null,
 	manager_password varchar(20)
 )ENGINE=InnoDB DEFAULT CHARSET=UTF8;
-insert manager (manager_name,manager_password) values ("Jason","jiaYOUt.t");
+-- 管理员新增
+insert manager (manager_name,manager_password) values ("Jason","Jason");
