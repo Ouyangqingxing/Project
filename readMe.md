@@ -19,7 +19,7 @@
 ![image](https://github.com/Ouyangqingxing/Project/blob/master/photoForShow/1.jpg)
 ![image](https://github.com/Ouyangqingxing/Project/blob/master/photoForShow/2.jpg)
 ![image](https://github.com/Ouyangqingxing/Project/blob/master/photoForShow/3.jpg)
-![image](https://github.com/Ouyangqingxing/Project/blob/master/photoForShow/4.jpg)
+![image](https://github.com/Ouyangqingxing/Project/blob/master/photoForShow/4.png)
 ![image](https://github.com/Ouyangqingxing/Project/blob/master/photoForShow/5.png)
 ![image](https://github.com/Ouyangqingxing/Project/blob/master/photoForShow/6.png)
 ![image](https://github.com/Ouyangqingxing/Project/blob/master/photoForShow/7.png)
