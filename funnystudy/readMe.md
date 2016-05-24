@@ -23,3 +23,7 @@
 
 ## 进度
  TODO:重构权限模块、完善后台管理页面相应功能、完善帮会相应的功能。
+
+
+## 截图展示
+![image](https://github.com/Ouyangqingxing/Project/edit/master/funnystudy/photoForShow/主页面.png)
