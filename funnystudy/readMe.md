@@ -26,4 +26,8 @@
 
 
 ## 截图展示
-![image](https://github.com/Ouyangqingxing/Project/edit/master/funnystudy/photoForShow/main.png)
+![image](https://github.com/Ouyangqingxing/Project/blob/master/funnystudy/photoForShow/main.png)
+![image](https://github.com/Ouyangqingxing/Project/blob/master/funnystudy/photoForShow/hide.png)
+![image](https://github.com/Ouyangqingxing/Project/blob/master/funnystudy/photoForShow/study.png)
+![image](https://github.com/Ouyangqingxing/Project/blob/master/funnystudy/photoForShow/fightA.png)
+![image](https://github.com/Ouyangqingxing/Project/blob/master/funnystudy/photoForShow/fightB.png)
