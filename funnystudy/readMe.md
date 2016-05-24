@@ -26,4 +26,4 @@
 
 
 ## 截图展示
-![image](https://github.com/Ouyangqingxing/Project/edit/master/funnystudy/photoForShow/主页面.png)
+![image](https://github.com/Ouyangqingxing/Project/edit/master/funnystudy/photoForShow/main.png)
