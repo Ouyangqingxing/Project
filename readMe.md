@@ -14,3 +14,12 @@
 | 简单弹幕式直播分享网站管理系统    |   /       |   2016.1          |专业课软件工程实验周的作业。写了比较多的文档、设计等，但是没有进行具体的开发。|
 | 物流管理                          |   /       |   2016.3          |专业课软件工程实验周的作业。写了比较多的文档、设计等，但是没有进行具体的开发。|
 ---------------------------------
+
+## 截图展示
+![image](https://github.com/Ouyangqingxing/Project/blob/master/photoForShow/1.jpg)
+![image](https://github.com/Ouyangqingxing/Project/blob/master/photoForShow/2.jpg)
+![image](https://github.com/Ouyangqingxing/Project/blob/master/photoForShow/3.jpg)
+![image](https://github.com/Ouyangqingxing/Project/blob/master/photoForShow/4.jpg)
+![image](https://github.com/Ouyangqingxing/Project/blob/master/photoForShow/5.jpg)
+![image](https://github.com/Ouyangqingxing/Project/blob/master/photoForShow/6.jpg)
+![image](https://github.com/Ouyangqingxing/Project/blob/master/photoForShow/7.jpg)
