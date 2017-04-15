@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<title>留言板</title>
+		<link href="/guestbook/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/guestbook/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+		<link href="/guestbook/css/jumbotron.css" rel="stylesheet">
+		<script src="/guestbook/js/ie-emulation-modes-warning.js"></script>
+		<link href="/guestbook/utf8-jsp/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
+	    <script src="/guestbook/js/login.js"></script>
+	    <script src="/guestbook/js/jquery.min.js"></script>
+	    <script src="/guestbook/js/verify.js"></script>
+	    <script src="/guestbook/js/index.js"></script>
+	    <script src="/guestbook/js/common.js"></script>
+		<script type="text/javascript">
+		 button_show_hide();
+			
+		</script>
+	</head>
+
+	<body>
+		<!--导航条-->
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/guestbook/index.html">留言板</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right">
+            <button type="button" id="myinfo"  style="display:none" class="btn btn-default" aria-label="Left Align" onclick="window.location.href='/guestbook/user/my_info.html'">
+			  <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+			</button>
+			<button type="button" id="logout"  style="display:none" class="btn btn-default" aria-label="Left Align" onclick="logout1()">
+			  <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+			</button>
+
+            	<button type="button" class="btn btn-success" id="loginBtn"  style="display:none" onclick="window.location.href='/guestbook/login.html'">登录</button>
+            
+            
+            	<button type="button" id="registBtn" class="btn btn-default"  style="display:none" onclick="window.location.href='/guestbook/regist.html'">注册</button>
+            
+            
+            	<button type="button" class="btn btn-primary" onclick="window.location.href='/guestbook/admin/admin_index.html'">管理员登录</button>
+            
+          </form>
+        </div><!--导航条-->
+      </div>
+    </nav>
+		<!-- Main jumbotron for a primary marketing message or call to action -->
+		<div class="jumbotron"></div>
+
+		<div class="container">
+			<!-- Example row of columns -->
+			<div class="row">
+				<div id="topic_post">
+				
+				</div>
+				<hr />
+				<h3>回复</h3>
+				<hr />
+				<div id="reply_post">
+					
+				</div>
+				
+				<div id="page_div">
+					<nav aria-label="Page navigation">
+						<ul class="pagination" id="contents_page" style="cursor:*"></ul>
+					</nav>
+				</div>
+			</div>
+			<hr />
+			<div id="editor" class="row">
+				发表回复
+				<div id="content_edit" style="height: 200px;">
+				</div>
+				<br />
+				<form action="" method="post">
+					<input type="submit" onclick="addReplyPost()" value="发表" class="btn btn-primary" />
+				</form>
+			</div>
+			<hr>
+			<footer>
+				<p>&copy; 2017 Upsoft Team1, Inc.</p>
+			</footer>
+		</div>
+		
+		<script>
+			window.jQuery || document.write('<script src="/guestbook/js/jquery.min.js"><\/script>')
+		</script>
+		<script src="/guestbook/js/contents.js"></script>
+		<script src="/guestbook/js/bootstrap.min.js"></script>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<script src="/guestbook/js/ie10-viewport-bug-workaround.js"></script>
+		<script type="text/javascript" src="utf8-jsp/third-party/template.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="/guestbook/utf8-jsp/umeditor.config.js"></script>
+		<script type="text/javascript" charset="utf-8" src="/guestbook/utf8-jsp/umeditor.min.js"></script>
+		<script type="text/javascript" src="/guestbook/utf8-jsp/lang/zh-cn/zh-cn.js"></script>
+		<!-- 实例化编辑器 -->
+		<script type="text/javascript">
+			var um = UM.getEditor('content_edit', {  autoWidth: true });
+		</script>
+		
+	    <script type="text/javascript">
+			$(function(){
+				selectTopicPostById();
+				selectReplyPostByTopicPostId(1);
+			});
+		</script>
+	</body>
+</html>

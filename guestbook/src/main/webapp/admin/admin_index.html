@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+	<meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+	<meta HTTP-EQUIV="Expires" CONTENT="0"> 
+
+    <title>留言板</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/guestbook/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/guestbook/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/guestbook/css/jumbotron.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="/guestbook/js/ie-emulation-modes-warning.js"></script>
+
+		<!--<script src="/guestbook/js/bootstrap-wysiwyg.js">
+			
+		</script>-->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="/guestbook/js/jquery.min.js"></script>
+    <script src="/guestbook/js/verify.js"></script>
+    <script src="/guestbook/js/admin_index.js"></script>
+     <script src="/guestbook/js/login.js"></script>
+	<script src="/guestbook/js/common.js"></script>
+	<script type="text/javascript">
+	button_show_hide();
+	
+	</script>
+  </head>
+
+  <body>
+	<!--导航条-->
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/guestbook/index.html">留言板</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right">
+            <button type="button" id="myinfo"  style="display:none" class="btn btn-default" aria-label="Left Align" onclick="window.location.href='/guestbook/user/my_info.html'">
+			  <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+			</button>
+			<button type="button" id="logout"  style="display:none" class="btn btn-default" aria-label="Left Align" onclick="logout1()">
+			  <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+			</button>
+
+            	<button type="button" class="btn btn-success" id="loginBtn"  style="display:none" onclick="window.location.href='/guestbook/login.html'">登录</button>
+            
+            
+            	<button type="button" id="registBtn" class="btn btn-default"  style="display:none" onclick="window.location.href='/guestbook/regist.html'">注册</button>
+            
+            
+            	<button type="button" class="btn btn-primary" onclick="window.location.href='/guestbook/admin/cust_admin.html'">用户管理</button>
+            
+          </form>
+        </div><!--导航条-->
+      </div>
+    </nav>
+
+		<!-- 灰色条 -->
+		<div class="jumbotron"></div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+      	
+      	<ul class="nav nav-tabs" role="tablist">
+						    <li role="presentation" class="active"><a href="#audit" aria-controls="home" role="tab" data-toggle="tab">已审核贴</a></li>
+						    <li role="presentation"><a href="#unaudit" aria-controls="profile" role="tab" data-toggle="tab">待审核贴</a></li>
+						  </ul>
+						
+						  <!-- Tab panes -->
+						  <div class="tab-content">
+						  	<br />
+								  	
+							<div role="tabpanel" class="tab-pane active" id="audit">
+								    	<!--审核列表-->
+								<div id="list">
+										<div  id="table_head">
+											<div class="row">
+												<div class="col-lg-4">标题</div>
+												<div class="col-lg-2">关键字</div>
+												<div class="col-lg-2">发布时间</div>
+												<div class="col-lg-1">发帖人</div>
+												<div class="col-lg-1">回复</div>
+												<div class="col-lg-2">操作</div>
+											</div>
+										</div><hr />
+										<div id="audit_list"></div>
+								</div>
+						
+					        <div id="page_div">
+					        	<nav aria-label="Page navigation">
+									  <ul class="pagination" id="adminIndex_topicpost_page"></ul>
+								</nav>
+					        </div>
+						    </div>
+						    <!--
+                            	审核 end
+                            -->
+                            <!--
+                            	未审核begin
+                            -->
+						    <div role="tabpanel" class="tab-pane" id="unaudit">
+						    	    	<!--帖子列表-->
+								<div id="list">
+										<div  id="table_head">
+											<div class="row">
+												<div class="col-lg-4">标题</div>
+												<div class="col-lg-2">关键字</div>
+												<div class="col-lg-2">发帖时间</div>
+												<div class="col-lg-2">发布人</div>
+												<div id = "row"></div>
+											</div>
+										</div><hr />
+										<div id="unaudit_list"></div>
+										<div id="unaudit_list_null"></div></br><hr />
+								</div>
+								
+						
+					        <div id="page_div">
+					        	<nav aria-label="Page navigation">
+									  <ul class="pagination" id="adminIndex_replypost_page"></ul>
+								</nav>
+					        </div>
+						    </div>
+						    <!--
+                            	未审核end
+                            -->
+						  </div>
+      </div>
+      
+      
+      
+      
+
+      <hr>
+
+      <footer>
+        <p>&copy; 2017 Upsoft Team1, Inc.</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/guestbook/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/guestbook/js/jquery.min.js"><\/script>')</script>
+    <script src="/guestbook/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/guestbook/js/ie10-viewport-bug-workaround.js"></script>
+    <script type="text/javascript">
+		$(function(){
+			selectAllTopicPost(1);
+			selectAllExamineTopicPost(1);
+		});
+	</script>
+  </body>
+</html>

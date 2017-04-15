@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.upsoft.dao.TopicPostDao">
+  <!-- ===================================== 返回类型  =====================================  -->
+  <resultMap id="BaseResultMap" type="com.upsoft.entity.TopicPost" >
+    <id 	column="id" 		 	property="id" 		   jdbcType="CHAR" />
+    <result column="customer_id" 	property="userId"   	   jdbcType="CHAR" />
+    <result column="customer_name" 	property="userName"   jdbcType="VARCHAR" />
+    <result column="title" 			property="title" jdbcType="VARCHAR" />
+    <result column="content" 		property="content" 	   jdbcType="VARCHAR" />
+    <result column="topic_time" 	property="time" 	   jdbcType="TIMESTAMP" />
+    <result column="reply_number" 	property="replyNumber" 	   jdbcType="INTEGER" />
+    <result column="state" 		 	property="state" 	   jdbcType="INTEGER" />
+  </resultMap>
+  <!-- ====================================== 增加  ======================================  -->
+  <insert id="daoAddTopicPost" parameterType="com.upsoft.entity.TopicPost">
+    insert into TopicPost (id,customer_id,customer_name,title,content, topic_time, reply_number,state)
+    	values (#{id,jdbcType=CHAR},
+    	#{userId,jdbcType=CHAR},
+    	#{userName,jdbcType=VARCHAR},
+		#{title,jdbcType=VARCHAR},
+		#{content,jdbcType=VARCHAR},
+		#{time,jdbcType=TIMESTAMP},
+		#{replyNumber,jdbcType=INTEGER},
+		#{state,jdbcType=INTEGER})
+  </insert>
+  <!-- ====================================== 删除  ======================================  -->
+  <delete id="daoDeleteTopicPost" parameterType="java.lang.String">
+    delete from TopicPost
+    	where id = #{id,jdbcType=CHAR}
+  </delete>
+  <!-- ====================================== 修改  ======================================  -->
+  <update id="daoUpdateTopicPost" parameterType="com.upsoft.entity.TopicPost">
+  	update TopicPost
+  		set id = #{id,jdbcType=CHAR},
+  		customer_id = #{userId,jdbcType=CHAR},
+  		customer_name = #{userName,jdbcType=VARCHAR},
+  		title = #{title,jdbcType=VARCHAR},
+  		content = #{content,jdbcType=VARCHAR}, 
+  		topic_time = #{time,jdbcType=TIMESTAMP}, 
+  		reply_number = #{replyNumber,jdbcType=INTEGER},
+  		state = #{state,jdbcType=INTEGER}
+  			where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="daoUpdateTopicPostReplyNumber" parameterType="java.lang.String">
+  	update TopicPost
+  		set reply_number = reply_number + 1
+  			where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="daoUpdateTopicPostState">
+  	update TopicPost
+  		set state = #{1}
+  			where id = #{0}
+  </update>
+  <update id="daoAdoptAllTopicPost">
+  	update TopicPost
+  		set state = 1
+  			where state = -1
+  </update>
+  <!-- ====================================== 查找  ======================================  -->
+  <sql id="BaseColumnList">
+    id,customer_id,customer_name,title,content,topic_time,reply_number,state
+  </sql>
+  <select id="daoSelectTopicPostById" resultMap="BaseResultMap">
+	select 
+		<include refid="BaseColumnList" />
+			from TopicPost
+				where id = #{id,jdbcType=CHAR}
+  </select>
+  <select id="daoSelectTopicPostByUserId" resultMap="BaseResultMap">
+	select 
+		<include refid="BaseColumnList" /> 
+			from TopicPost
+				where state = 1 and customer_id = #{userId,jdbcType=CHAR}  
+  </select>
+  <select id="daoSelectTopicPostByTitle" resultMap="BaseResultMap">
+  	select 
+		<include refid="BaseColumnList" /> 
+			from TopicPost
+				where state = 1 and title like #{title,jdbcType=VARCHAR}
+					order by topic_time desc
+  </select>
+  <select id="daoSelectTopicPostBySearch" resultMap="BaseResultMap">
+	select 
+		<include refid="BaseColumnList" /> 
+			from TopicPost
+				where state = 1 and content like #{content,jdbcType=VARCHAR}
+					order by topic_time desc
+  </select>
+  <select id="daoSelectAllExamineTopicPost" resultMap="BaseResultMap">
+	select 
+		<include refid="BaseColumnList" /> 
+			from TopicPost
+				where state = -1
+					order by topic_time desc
+  </select>
+  <select id="daoSelectAllPublicTopicPost" resultMap="BaseResultMap">
+	select 
+		<include refid="BaseColumnList" /> 
+			from TopicPost
+				where state = 1
+					order by topic_time desc
+  </select>
+  <select id="daoSelectAllTopicPost" resultMap="BaseResultMap">
+	select 
+		<include refid="BaseColumnList" /> 
+			from TopicPost
+				where state != -1
+					order by topic_time desc
+  </select>
+</mapper>

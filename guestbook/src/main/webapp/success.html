@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>报错页面</title>
+
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<script src="./js/jquery.min.js"></script>
+</head>
+<body>
+	<div class="list-max">
+		<div class="error-bg"></div>
+		<div class="error-content">			
+			<img src="./img/error-content-img.png">
+			<div class="right">
+				<ul>
+					<li><span class="">登陆成功</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+$(function(){
+	setTimeout(function(){
+		window.location.replace('/guestbook/index.html');
+		},1000);
+});
+</script>
+</html>

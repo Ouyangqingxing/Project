@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>注册</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/guestbook/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/guestbook/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/guestbook/css/regist.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="/guestbook/js/ie-emulation-modes-warning.js"></script>
+
+    
+    <script src="/guestbook/js/jquery.min.js"></script>
+    <script src="/guestbook/js/verify.js"></script>
+    <script src="/guestbook/js/login.js"></script>
+	<script src="/guestbook/js/common.js"></script>
+	<script type="text/javascript">
+	 button_show_hide();
+		
+	</script>
+
+  </head>
+
+  <body>
+  	<!--导航条-->
+   <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/guestbook/index.html">留言板</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right">
+            <button type="button" id="myinfo"  style="display:none" class="btn btn-default" aria-label="Left Align" onclick="window.location.href='/guestbook/user/my_info.html'">
+			  <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+			</button>
+			<button type="button" id="logout"  style="display:none" class="btn btn-default" aria-label="Left Align" onclick="logout1()">
+			  <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+			</button>
+
+            	<button type="button" class="btn btn-success" id="loginBtn"  style="display:none" onclick="window.location.href='/guestbook/login.html'">登录</button>
+            
+            
+            	<button type="button" id="registBtn" class="btn btn-default"  style="display:none" onclick="window.location.href='/guestbook/regist.html'">注册</button>
+            
+            
+            	<button type="button" class="btn btn-primary" onclick="window.location.href='/guestbook/admin/admin_index.html'">管理员登录</button>
+            
+          </form>
+        </div><!--导航条-->
+      </div>
+    </nav>
+
+		<div class="jumbotron">
+     
+    </div>
+    
+    <div class="container" id="regist">
+      <div class="form-signin">
+        
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="text" id="inputEmail" class="form-control" placeholder="输入一个邮箱地址" required>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="请输入密码" required>
+        <button id="registBtn" class="btn btn-lg btn-primary btn-block" onclick="regist()">
+        	确认注册
+        </button>
+        <span id="result"></span>
+      </div>
+
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/guestbook/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

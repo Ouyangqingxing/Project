@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.upsoft.dao.KeywordDao">
+  <!-- ===================================== 返回类型  =====================================  -->
+  <resultMap id="BaseResultMap" type="com.upsoft.entity.Keyword" >
+    <id 	column="id" 		 	property="id" 		   jdbcType="CHAR" />
+    <result column="topicPost_id" 	property="topicPostId"  jdbcType="CHAR" />
+    <result column="content" 	 	property="content"   jdbcType="VARCHAR" />
+  </resultMap>
+  <!-- ====================================== 增加  ======================================  -->
+  <insert id="daoAddKeyword" parameterType="com.upsoft.entity.Keyword">
+    insert into Keyword (id,topicPost_id, content)
+    	values (#{id,jdbcType=CHAR},#{topicPostId,jdbcType=CHAR},
+		#{content,jdbcType=VARCHAR})
+  </insert>
+  <!-- ====================================== 删除  ======================================  -->
+  <delete id="daoDeleteKeyword" parameterType="java.lang.String">
+    delete from Keyword
+    	where id = #{id,jdbcType=CHAR}
+  </delete>
+  <!-- ====================================== 修改  ======================================  -->
+  <update id="daoUpdateKeyword" parameterType="com.upsoft.entity.Keyword">
+  	update Keyword
+  		set topicPost_id = #{topicPostId,jdbcType=CHAR},
+		content = #{content,jdbcType=VARCHAR}
+  			where id = #{id,jdbcType=CHAR}
+  </update>
+  <!-- ====================================== 查找  ======================================  -->
+  <sql id="BaseColumnList">
+    id,topicPost_id,content
+  </sql>
+  <select id="daoSelectKeywordById" resultMap="BaseResultMap">
+	select 
+		<include refid="BaseColumnList" />
+			from Keyword
+				where id = #{id,jdbcType=CHAR}
+  </select>
+  <select id="daoSelectKeywordByTopicPostId" resultMap="BaseResultMap">
+	select 
+		<include refid="BaseColumnList" /> 
+			from Keyword
+				where topicPost_id = #{topicPostId,jdbcType=CHAR}
+  </select>
+  <select id="daoSelectKeywordBySearch" resultMap="BaseResultMap">
+	select 
+		<include refid="BaseColumnList" /> 
+			from Keyword
+				where content like #{content,jdbcType=VARCHAR}				
+  </select>
+  <select id="daoSelectAllKeyword" resultMap="BaseResultMap">
+	select 
+		<include refid="BaseColumnList" /> 
+			from Keyword
+  </select>
+</mapper>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.upsoft.dao.JurisdictionDao">
+  <!-- ===================================== 返回类型  =====================================  -->
+  <resultMap id="BaseResultMap" type="com.upsoft.entity.Jurisdiction" >
+    <id 	column="id" 		 	property="id" 		   jdbcType="CHAR" />
+    <result column="name" 			property="name"   	   jdbcType="VARCHAR" />
+    <result column="url" 	 		property="url"   		jdbcType="VARCHAR" />
+    <result column="serial_number" 	property="serialNumber" jdbcType="INTEGER" />
+  </resultMap>
+  <!-- ====================================== 增加  ======================================  -->
+  <insert id="daoAddJurisdiction" parameterType="com.upsoft.entity.Jurisdiction">
+    insert into Jurisdiction (id,name, url, serial_number)
+    	values (#{id,jdbcType=CHAR},#{name,jdbcType=VARCHAR},
+		#{url,jdbcType=VARCHAR},#{serialNumber,jdbcType=INTEGER})
+  </insert>
+  <!-- ====================================== 删除  ======================================  -->
+  <delete id="daoDeleteJurisdiction" parameterType="java.lang.String">
+    delete from Jurisdiction
+    	where id = #{0}
+  </delete>
+  <!-- ====================================== 修改  ======================================  -->
+  <update id="daoUpdateJurisdiction" parameterType="com.upsoft.entity.Jurisdiction">
+  	update Jurisdiction
+  		set name = #{name,jdbcType=VARCHAR},
+  		url = #{url,jdbcType=VARCHAR},
+  		serial_number = #{serialNumber,jdbcType=INTEGER} 
+  			where id = #{id,jdbcType=CHAR}
+  </update>
+  <!-- ====================================== 查找  ======================================  -->
+  <sql id="BaseColumnList">
+    id,name,url,serial_number
+  </sql>
+  <select id="daoSelectJurisdictionById" resultMap="BaseResultMap">
+	select
+		<include refid="BaseColumnList" />
+			from Jurisdiction
+				where id = #{id,jdbcType=CHAR}
+  </select>
+  <!-- 通过用户id 
+   <select id="daoSelectJurisdictionByUserId" resultMap="BaseResultMap">
+	select 
+	<include refid="BaseColumnList" /> 
+	from jurisdiction 
+	where id in (select JURISDICTION_id from role_jurisdiction
+	where ROLE_ID=
+	(select ROLE_ID from customer_role 
+	where customer_id = (select id from customer where id = #{id,jdbcType=CHAR})
+	)
+	)
+  </select>
+  查权限 -->
+  <select id="daoSelectJurisdictionByUserId" resultMap="BaseResultMap">
+	select d.<include refid="BaseColumnList" /> 
+	from customer a 
+	inner join customer_role b  on a.id = b.customer_id 
+	inner join role_jurisdiction c on b.role_id = c.role_id 
+	inner join jurisdiction d on c.jurisdiction_id = d.id 
+	where a.id = #{id,jdbcType=CHAR}
+  </select>
+  <select id="daoSelectAllJurisdiction" resultMap="BaseResultMap">
+	select 
+		<include refid="BaseColumnList" /> 
+			from Jurisdiction
+  </select>
+</mapper>

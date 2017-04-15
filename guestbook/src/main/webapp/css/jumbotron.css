@@ -1,0 +1,14 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+#table_head {
+	font: "微软雅黑";
+	
+	font-size: medium;
+	
+}
+label{
+	margin: 5px;
+}

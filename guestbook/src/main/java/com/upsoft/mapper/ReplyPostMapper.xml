@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.upsoft.dao.ReplyPostDao">
+  <!-- ===================================== 返回类型  =====================================  -->
+  <resultMap id="BaseResultMap" type="com.upsoft.entity.ReplyPost" >
+    <id 	column="id" 		 	property="id" 		   jdbcType="CHAR" />
+    <result column="customer_id" 	property="userId"      jdbcType="CHAR" />
+    <result column="customer_name" 	property="userName"    jdbcType="VARCHAR" />
+    <result column="topicPost_id" 	property="topicPostId" jdbcType="CHAR" />
+    <result column="content" 		property="content" 	   jdbcType="VARCHAR" />
+    <result column="reply_time" 	property="time" 	   jdbcType="TIMESTAMP" />
+    <result column="floor" 		 	property="floor" 	   jdbcType="INTEGER" />
+    <result column="state" 		 	property="state" 	   jdbcType="INTEGER" />
+  </resultMap> 
+  <!-- ====================================== 增加  ======================================  -->
+  <insert id="daoAddReplyPost" parameterType="com.upsoft.entity.ReplyPost">
+    insert into ReplyPost (id,customer_id,customer_name,topicPost_id,content,reply_time,floor,state)
+    	values (#{id,jdbcType=CHAR},
+    	#{userId,jdbcType=CHAR},
+    	#{userName,jdbcType=VARCHAR},
+    	#{topicPostId,jdbcType=CHAR},
+    	#{content,jdbcType=VARCHAR},
+    	#{time,jdbcType=TIMESTAMP},
+    	#{floor,jdbcType=INTEGER},
+    	#{state,jdbcType=INTEGER})
+  </insert>
+  <!-- ====================================== 删除  ======================================  -->
+  <delete id="daoDeleteReplyPost" parameterType="java.lang.String">
+    delete from ReplyPost
+    	where id = #{id,jdbcType=CHAR}
+  </delete>
+  <!-- ====================================== 修改  ======================================  -->
+  <update id="daoUpdateReplyPost" parameterType="com.upsoft.entity.ReplyPost">
+  	update ReplyPost
+  		set customer_id = #{userId,jdbcType=CHAR},
+  		customer_name = #{userName,jdbcType=VARCHAR},
+  		topicPost_id = #{topicPostId,jdbcType=CHAR},
+  		content = #{content,jdbcType=VARCHAR},
+  		reply_time = #{time,jdbcType=TIMESTAMP},
+  		floor = #{floor,jdbcType=INTEGER},
+  		state = #{state,jdbcType=INTEGER}
+  			where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="daoUpdateReplyPostState">
+  	update ReplyPost
+  		set state = #{1}
+  			where id = #{0}
+  </update>
+  <!-- ====================================== 查找  ======================================  -->
+  <sql id="BaseColumnList">
+  	id,customer_id,customer_name,topicPost_id,content,reply_time,floor,state
+  </sql>
+  <select id="daoSelectReplyPostById" resultMap="BaseResultMap">
+	select 
+		<include refid="BaseColumnList" />
+			from ReplyPost
+				where id = #{id,jdbcType=CHAR}
+  </select>
+  <select id="daoSelectReplyPostByUserId" resultMap="BaseResultMap">
+	select 
+		<include refid="BaseColumnList" /> 
+			from ReplyPost
+				where customer_id = #{userId,jdbcType=CHAR}
+					order by reply_time desc
+  </select>
+  <select id="daoSelectReplyPostByTopicPostId" resultMap="BaseResultMap">
+	select 
+		<include refid="BaseColumnList" /> 
+			from ReplyPost
+				where topicPost_id = #{topicPostId,jdbcType=CHAR}
+					order by reply_time
+  </select>
+  <select id="daoSelectReplyPostBySearch" resultMap="BaseResultMap">
+	select 
+		<include refid="BaseColumnList" /> 
+			from ReplyPost
+				where state = 1 and content like #{content,jdbcType=VARCHAR}  
+					order by reply_time desc
+  </select>
+  <select id="daoSelectAllReplyPost" resultMap="BaseResultMap">
+	select 
+		<include refid="BaseColumnList" /> 
+			from ReplyPost
+  </select>
+</mapper>

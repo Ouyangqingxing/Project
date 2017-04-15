@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.upsoft.dao.RoleDao">
+  <!-- ===================================== 返回类型  =====================================  -->
+  <resultMap id="BaseResultMap" type="com.upsoft.entity.Role" >
+    <id 	column="id" 		property="id" 		   jdbcType="CHAR" />
+    <result column="role_name" 	property="name"   	   jdbcType="VARCHAR" />
+  </resultMap> 
+  <!-- ====================================== 增加  ======================================  -->
+  <insert id="daoAddRole" parameterType="com.upsoft.entity.Role">
+    insert into Role (id,role_name)
+    	values (#{id,jdbcType=CHAR},#{name,jdbcType=VARCHAR})
+  </insert>
+  <!-- ====================================== 删除  ======================================  -->
+  <delete id="daoDeleteRole" parameterType="java.lang.String">
+    delete from Role
+    	where id = #{0}
+  </delete>
+  <!-- ====================================== 修改  ======================================  -->
+  <update id="daoUpdateRole" parameterType="com.upsoft.entity.Role">
+  	update Role
+  		set role_name = #{name,jdbcType=VARCHAR}
+  			where id = #{id,jdbcType=CHAR}
+  </update>
+  <!-- ====================================== 查找  ======================================  -->
+  <sql id="BaseColumnList">
+    id,role_name
+  </sql>
+  <select id="daoSelectRoleById" resultMap="BaseResultMap">
+	select 
+		<include refid="BaseColumnList" />
+			from Role
+				where id = #{id,jdbcType=CHAR}
+  </select>
+  <select id="daoSelectRoleByName" resultMap="BaseResultMap">
+	select 
+		<include refid="BaseColumnList" />
+			from Role
+				where role_name = #{name,jdbcType=VARCHAR}
+  </select>
+  <select id="daoSelectAllRole" resultMap="BaseResultMap">
+	select 
+		<include refid="BaseColumnList" /> 
+			from Role
+  </select>
+  <select id="daoselectRoleByUserName" resultMap="BaseResultMap" parameterType="java.lang.String">
+	select c.<include refid="BaseColumnList" /> 
+		from customer a 
+		inner join  customer_role b on a.id = b.customer_id 
+		inner join ROLE c on b.role_id = c.id 
+		where a.customer_name = #{0}
+  </select>
+</mapper>

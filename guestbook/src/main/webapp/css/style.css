@@ -1,0 +1,100 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+li {
+	list-style-type: none;
+}
+a {
+	text-decoration: none;
+}
+html {
+	width: 100%;
+	height: 100%;
+}
+body {
+	width: 100%;
+	height: 100%;
+	font-size: 12px;
+	color: #333;
+	font-family: "瀹嬩綋";
+}
+.list-max {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
+/*error.html begin*/
+.error-bg{
+	width: 100%;
+	height: 100%;
+	background: url(../img/error-bg.png) no-repeat;
+	background-position: 40% 90%;
+	background-size:1390px 834px;/*TODO ie8涓嶆敮鎸�/
+	opacity: 0.5;
+	filter:alpha(opacity=50);/*ie*/
+}
+.error-content{
+	height: 165px;
+	width:565px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -82.5px;
+	margin-left:-282.5px; 
+}
+.error-content img{
+	float:left;
+	height: 165px;
+	width: 165px;
+}
+.error-content .right{
+	float: left;
+	height: 165px;
+	width: 350px;
+	margin-left: 50px;
+}
+.error-content .right ul{
+	height: 100%;
+	width: 100%;
+}
+.error-content .right ul li{
+	height: 55px;
+	line-height: 55px;
+}
+.error-content .right span{
+	font-style:normol;
+	font-weight:700;
+	font-size:28px;
+	font-family: '寰蒋闆呴粦 Bold', '寰蒋闆呴粦';
+}
+.error-content .right i{
+	font-style: normal;
+	font-family: '寰蒋闆呴粦 Regular', '寰蒋闆呴粦'; 
+	font-weight: 400;
+	font-size: 14px;
+	color: #999999;
+}
+.error-content .right button{
+	height: 40px;
+	line-height:40px;
+	width: 106px;
+	background: url(../img/btn_big_bg.png) repeat-x;
+	border-radius: 6px 6px 4px 4px;
+	box-shadow: 0 3px 2px #95cef9;
+	border-right: 1px solid #95cef9;
+	border-left: 1px solid #95cef9;
+	border-bottom: 1px solid #95cef9;
+	font-family: '寰蒋闆呴粦 Regular', '寰蒋闆呴粦';
+	font-size: 14px;color: #006699;
+}
+.error-content .right button:hover{
+	cursor:pointer;
+}
+.error-content .right button.back-last{
+	margin-left: 20px;
+}
+/*error.html end*/

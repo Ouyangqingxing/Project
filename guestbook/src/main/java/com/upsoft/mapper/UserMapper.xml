@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.upsoft.dao.UserDao">
+  <!-- ===================================== 返回类型  =====================================  -->
+  <resultMap id="BaseResultMap" type="com.upsoft.entity.User" >
+    <id 	column="id" 		 	property="id" 		   jdbcType="CHAR" />
+    <result column="customer_name" 	property="name"   	   jdbcType="VARCHAR" />
+    <result column="password" 	 	property="password"   jdbcType="CHAR" />
+    <result column="post_number" 	property="postNumber" jdbcType="INTEGER" />
+    <result column="state" 		 	property="state" 	   jdbcType="INTEGER" />
+  </resultMap>
+   
+  <!-- ====================================== 增加  ======================================  -->
+  <insert id="daoAddUser" parameterType="com.upsoft.entity.User">
+    insert into customer (id,customer_name, password, post_number,state)
+    	values (#{id,jdbcType=CHAR},#{name,jdbcType=VARCHAR},
+		#{password,jdbcType=CHAR},#{postNumber,jdbcType=INTEGER},#{state,jdbcType=INTEGER})
+  </insert>
+  <insert id="daoAddUserRole">
+  	insert into customer_role(customer_id,role_id)
+  	values (#{0},#{1})
+  </insert>
+  <!-- ====================================== 修改  ======================================  -->
+  <update id="daoUpdatePassword">
+  	update customer
+  		set password = #{1}
+  			where id = #{0}
+  </update>
+  <update id="daoUpdatePostNumber">
+  	update customer
+  		set post_number = post_number + 1
+  			where id = #{0}
+  </update>
+  <update id="daoUpdateState">
+  	update customer
+  		set state = #{1}
+  			where id = #{0}
+  </update>
+  <update id="daoUpdateUser" parameterType="com.upsoft.entity.User">
+  	update customer
+  		set customer_name = #{name,jdbcType=VARCHAR},
+  		password = #{password,jdbcType=CHAR},
+  		post_number = #{postNumber,jdbcType=INTEGER},
+  		state = #{state,jdbcType=INTEGER}
+  			where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="daoUpdateUserRole">
+  	update customer_role
+  		set role_id = #{1}
+  			where customer_id = #{0}
+  </update>
+  <!-- ====================================== 查找  ======================================  -->
+  <sql id="BaseColumnList">
+    id,customer_name,password,post_number,state
+  </sql>
+  <select id="daoSelectUserByName" resultMap="BaseResultMap">
+  	select 
+		<include refid="BaseColumnList" />
+			from customer
+				where customer_name = #{name,jdbcType=VARCHAR}
+  </select>
+  <select id="daoSelectUserByContent" resultMap="BaseResultMap">
+  	select 
+		<include refid="BaseColumnList" />
+			from customer
+				where customer_name like #{name,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="daoSelectUserById" resultMap="BaseResultMap">
+	select 
+		<include refid="BaseColumnList" />
+			from customer
+				where id = #{id,jdbcType=CHAR}
+  </select>
+  <select id="daoSelectAllUser" resultMap="BaseResultMap">
+	select 
+		<include refid="BaseColumnList" /> 
+			from customer where id != #{id,jdbcType=CHAR}
+  </select>
+  <!-- ====================================== 判断  ======================================  -->
+  <select id="daoCheckLogin" resultMap="BaseResultMap">
+  	select 
+  	<include refid="BaseColumnList" />
+  		from customer
+  			where customer_name = #{0} and password = #{1} and rownum &lt;= 1
+  </select>
+</mapper>
